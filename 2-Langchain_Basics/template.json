@@ -1,0 +1,15 @@
+{
+    "name": null,
+    "input_variables": [
+        "country"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "What is the capital of {country}?",
+    "template_format": "f-string",
+    "validate_template": true,
+    "_type": "prompt"
+}
