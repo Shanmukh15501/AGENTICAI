@@ -111,9 +111,11 @@ async def send_async_message(msg: Message):
     """
     This Function interacts runs the interaction of rag_pipeline in a redis server
     """
-    print("come")
-    job = q.enqueue(send_message_queue, msg.user_input)
-    
+    try:
+
+        job = q.enqueue(send_message_queue, msg.user_input)
+    except Exception as e:
+        print("Exception",e)
 
     return {"status":"queued","job":job.id}
 

@@ -18,9 +18,8 @@ def send_message_queue(msg):
     
     print("coming here",msg)
     retrieved_docs = pipeline_instance.retrieve(msg)
-
     context = "\n\n".join([
-        doc.payload.get('page_content', '') for doc in retrieved_docs
+        doc.payload.get('text', {}).get('page_content', '') for doc in retrieved_docs
     ])
 
     prompt = f"""You are a helpful assistant. Use the following context to answer the user's question.
@@ -29,7 +28,7 @@ def send_message_queue(msg):
     {context}
 
     Question:
-    {msg.user_input}
+    {msg}
     """
 
     client = OpenAI()
