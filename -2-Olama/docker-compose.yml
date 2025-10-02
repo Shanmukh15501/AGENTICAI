@@ -1,0 +1,9 @@
+services:
+  vector-db:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"  # You can change the first number to any host port like 9999
+  valkey:
+    image: valkey/valkey
+    ports:
+      - 6379:6379

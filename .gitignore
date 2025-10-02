@@ -1,2 +1,8 @@
 py_ve_3.11.4
 .env
+__pycache__/
+*.py[cod]
+
+# Optional: Ignore virtual environments
+venv/
+.env/
